@@ -2,6 +2,8 @@
 [templateurl]: https://github.com/Thraxis/docker-templates
 
 # thraxis/lazylibrarian-calibre
+[![](https://images.microbadger.com/badges/version/thraxis/lazylibrarian-calibre.svg)](https://microbadger.com/images/thraxis/lazylibrarian-calibre "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/thraxis/lazylibrarian-calibre.svg)](https://microbadger.com/images/thraxis/lazylibrarian-calibre "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/thraxis/lazylibrarian-calibre.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/thraxis/lazylibrarian-calibre.svg)][hub]
+[hub]: https://hub.docker.com/r/thraxis/lazylibrarian-calibre/
 
 [LazyLibrarian][lazyurl] is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info.  This container is based on the DobyTang fork.
 
