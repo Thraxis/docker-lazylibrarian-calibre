@@ -1,8 +1,14 @@
+[![Thraxis|Docker](https://raw.githubusercontent.com/thraxis/docker-templates/master/thraxis/img/thraxis-docker-medium.png)][templateurl]
+[templateurl]: https://github.com/Thraxis/docker-templates
+
+# thraxis/lazylibrarian-calibre
 
 [LazyLibrarian][lazyurl] is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info.  This container is based on the DobyTang fork.
+[Calibre][calibreurl] is a free and open source e-book library management application developed by users of e-books for users of e-books. This container uses the CLI program calibredb to import books to the library.
 
-[![lazylibrarian](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png)][lazyurl]
+[![lazylibrarian](https://raw.githubusercontent.com/thraxis/docker-templates/master/thraxis/img/lazylibrarian-calibre-icon.png)][lazyurl]
 [lazyurl]: https://github.com/DobyTang/LazyLibrarian
+[calibreurl]: http://calibre-ebook.com/
 
 ## Usage
 
@@ -12,6 +18,7 @@ docker create \
   -v <path to data>:/config \
   -v <path to data>:/downloads \
   -v <path to data>:/books \
+  -v <path to data>:/magazines \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
   -p 5299:5299 \
@@ -29,7 +36,8 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-p 5299` - Port for webui
 * `-v /config` Containers lazylibrarian config and database
 * `-v /downloads` lazylibrarian download folder
-* `-v /books` location of ebook library
+* `-v /books` location of calibre ebook library
+* `-v /magazines` location of magazine library
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for setting timezone information, eg Europe/London
