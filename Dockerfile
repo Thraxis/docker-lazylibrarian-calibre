@@ -52,9 +52,9 @@ RUN \
 	build-dependencies && \
  rm -rf \
 	/tmp/* && \
- rm -rf
+ rm -rf \
     /tmp/calibre-installer-cache && \
- rm -rf
+ rm -rf \
     glibc.apk glibc-bin.apk /var/cache/apk/*
 
  # add local files
