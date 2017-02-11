@@ -25,7 +25,7 @@ docker create \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
   -p 5299:5299 \
-  linuxserver/lazylibrarian
+  thraxis/lazylibrarian
 ```
 
 ## Parameters
@@ -63,15 +63,16 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 
 ## Info
 
-* To monitor the logs of the container in realtime `docker logs -f lazylibrarian`.
+* To monitor the logs of the container in realtime `docker logs -f lazylibrarian-calibre`.
 
 * container version number
 
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' lazylibrarian`
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' lazylibrarian-calibre`
 
 * image version number
 
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/lazylibrarian`
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' thraxis/lazylibrarian-calibre`
 
 ## Versions
++ **10-02-17:** Rebased Alpine 3.5 
 + **21.01.17:** Initial Release
