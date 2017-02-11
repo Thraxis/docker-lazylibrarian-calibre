@@ -51,10 +51,11 @@ RUN \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
-	/tmp/*
-
- rm -rf /tmp/calibre-installer-cache && \
- rm -rf glibc.apk glibc-bin.apk /var/cache/apk/*
+	/tmp/* && \
+ rm -rf
+    /tmp/calibre-installer-cache && \
+ rm -rf
+    glibc.apk glibc-bin.apk /var/cache/apk/*
 
  # add local files
  COPY root/ /
