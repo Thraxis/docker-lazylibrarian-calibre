@@ -74,5 +74,6 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' thraxis/lazylibrarian-calibre`
 
 ## Versions
-+ **10-02-17:** Rebased Alpine 3.5 
++ **26-05-17:** Rebased Alpine 3.6
++ **10-02-17:** Rebased Alpine 3.5
 + **21.01.17:** Initial Release
