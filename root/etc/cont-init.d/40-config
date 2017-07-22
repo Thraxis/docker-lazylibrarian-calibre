@@ -2,7 +2,16 @@
 
 # make folders
 mkdir -p \
-	/config/log
+	/config/Logs
+
+mkdir -p \
+	/config/calibre
+
+mkdir -p \
+	/config/calibre/tmp
+
+mkdir -p \
+	/config/cache/calibre/
 
 # copy config
 [[ ! -e /config/config.ini ]] && \
@@ -12,4 +21,4 @@ mkdir -p \
 chown abc:abc \
 	/config/config.ini
 chown abc:abc -R \
-	/config/log
+	/config/Logs

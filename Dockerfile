@@ -8,6 +8,10 @@ LABEL build_version="Thraxis' version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 ENV GLIBC_VERSION 2.23-r3
 ENV CALIBRE_INSTALLER_SOURCE_CODE_URL https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py
+ENV CALIBRE_CONFIG_DIRECTORY="/config/calibre/"
+ENV CALIBRE_TEMP_DIR="/config/calibre/tmp/"
+ENV CALIBRE_CACHE_DIRECTORY="/config/cache/calibre/"
+
 
 # install packages
 RUN \
@@ -62,4 +66,4 @@ RUN \
 
  # ports and volumes
  EXPOSE 5299
- VOLUME /config /books /downloads
+ VOLUME /config /books /audiobooks /magazines /downloads

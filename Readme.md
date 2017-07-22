@@ -21,11 +21,12 @@ docker create \
   -v <path to data>:/config \
   -v <path to data>:/downloads \
   -v <path to data>:/books \
+  -v <path to data>:/audiobooks \
   -v <path to data>:/magazines \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
   -p 5299:5299 \
-  thraxis/lazylibrarian
+  thraxis/lazylibrarian-calibre
 ```
 
 ## Parameters
@@ -40,12 +41,13 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-v /config` Containers lazylibrarian config and database
 * `-v /downloads` lazylibrarian download folder
 * `-v /books` location of calibre ebook library
+* `-v /audiobooks` location of audiobook library
 * `-v /magazines` location of magazine library
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for setting timezone information, eg Europe/London
 
-It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it lazylibrarian /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it lazylibrarian-calibre /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -74,6 +76,7 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' thraxis/lazylibrarian-calibre`
 
 ## Versions
++ **22-07-17:** Added Audiobook mapping and calibredb environment variables
 + **26-05-17:** Rebased Alpine 3.6
 + **10-02-17:** Rebased Alpine 3.5
 + **21.01.17:** Initial Release
