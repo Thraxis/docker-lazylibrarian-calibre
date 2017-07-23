@@ -22,3 +22,7 @@ chown abc:abc \
 	/config/config.ini
 chown abc:abc -R \
 	/config/Logs
+chown abc:abc -R \
+	/config/calibre
+chown abc:abc -R \
+	/config/cache
