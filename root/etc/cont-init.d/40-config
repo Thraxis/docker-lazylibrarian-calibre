@@ -5,6 +5,9 @@ mkdir -p \
 	/config/Logs
 
 mkdir -p \
+	/config/log
+
+mkdir -p \
 	/config/calibre
 
 mkdir -p \
@@ -22,6 +25,8 @@ chown abc:abc \
 	/config/config.ini
 chown abc:abc -R \
 	/config/Logs
+chown abc:abc -R \
+	/config/log	
 chown abc:abc -R \
 	/config/calibre
 chown abc:abc -R \
