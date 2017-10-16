@@ -5,6 +5,9 @@ mkdir -p \
 	/config/Logs
 
 mkdir -p \
+	/config/log
+
+mkdir -p \
 	/config/calibre
 
 mkdir -p \
