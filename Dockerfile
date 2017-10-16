@@ -15,17 +15,16 @@ ENV CALIBRE_CACHE_DIRECTORY="/config/cache/calibre/"
 
 # install packages
 RUN \
- apk update && \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
 	make && \
 
  apk add --no-cache \
- ghostscript \
- mesa-gl \
- qt5-qtbase-x11 \
- xdg-utils && \
+ 	ghostscript \
+ 	mesa-gl \
+ 	qt5-qtbase-x11 \
+ 	xdg-utils && \
 
  # build unrarlib
  rar_ver=$(apk info unrar | grep unrar- | cut -d "-" -f2 | head -1) && \
