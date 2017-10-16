@@ -76,6 +76,7 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' thraxis/lazylibrarian-calibre`
 
 ## Versions
++ **16-10-17:** Internal GIT Pull at Runtime
 + **22-07-17:** Added Audiobook mapping and calibredb environment variables
 + **26-05-17:** Rebased Alpine 3.6
 + **10-02-17:** Rebased Alpine 3.5
