@@ -6,11 +6,11 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Thraxis' version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-ENV GLIBC_VERSION 2.23-r3
-ENV CALIBRE_INSTALLER_SOURCE_CODE_URL https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py
-ENV CALIBRE_CONFIG_DIRECTORY="/config/calibre/"
-ENV CALIBRE_TEMP_DIR="/config/calibre/tmp/"
-ENV CALIBRE_CACHE_DIRECTORY="/config/cache/calibre/"
+#ENV GLIBC_VERSION 2.26-r0
+#ENV CALIBRE_INSTALLER_SOURCE_CODE_URL https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py
+#ENV CALIBRE_CONFIG_DIRECTORY="/config/calibre/"
+#ENV CALIBRE_TEMP_DIR="/config/calibre/tmp/"
+#ENV CALIBRE_CACHE_DIRECTORY="/config/cache/calibre/"
 
 
 # install packages
@@ -41,14 +41,14 @@ RUN \
  make install-lib && \
 
  # build calibre
- curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
- curl -Lo glibc.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" && \
- apk add glibc.apk && \
- curl -Lo glibc-bin.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" && \
- apk add glibc-bin.apk && \
- /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib && \
- echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf &&\
- wget -O- ${CALIBRE_INSTALLER_SOURCE_CODE_URL} | python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(install_dir='/opt', isolated=True)" && \
+ #curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
+ #curl -Lo glibc.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" && \
+ #apk add glibc.apk && \
+ #curl -Lo glibc-bin.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" && \
+ #apk add glibc-bin.apk && \
+ #/usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib && \
+ #echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf &&\
+ #wget -O- ${CALIBRE_INSTALLER_SOURCE_CODE_URL} | python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(install_dir='/opt', isolated=True)" && \
 
 # install app
  git clone --depth 1 https://github.com/dobytang/lazylibrarian.git /app/lazylibrarian && \
@@ -58,10 +58,10 @@ RUN \
 	build-dependencies && \
  rm -rf \
 	/tmp/* && \
- rm -rf \
-    /tmp/calibre-installer-cache && \
- rm -rf \
-    glibc.apk glibc-bin.apk /var/cache/apk/*
+ #rm -rf \
+ #   /tmp/calibre-installer-cache && \
+ #rm -rf \
+ #   glibc.apk glibc-bin.apk /var/cache/apk/*
 
  # add local files
  COPY root/ /
