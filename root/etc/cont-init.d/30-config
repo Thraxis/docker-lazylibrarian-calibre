@@ -4,14 +4,14 @@
 mkdir -p \
 	/config/log
 
-# mkdir -p \
-#	/config/calibre
+ mkdir -p \
+	/config/calibre
 
-# mkdir -p \
-#	/config/calibre/tmp
+ mkdir -p \
+	/config/calibre/tmp
 
-# mkdir -p \
-#	/config/cache/calibre/
+ mkdir -p \
+	/config/cache/calibre/
 
 # copy config
 [[ ! -e /config/config.ini ]] && \
