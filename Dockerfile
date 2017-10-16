@@ -57,7 +57,8 @@ RUN \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
-	/tmp/* && \
+	/tmp/* 
+#	&& \
  #rm -rf \
  #   /tmp/calibre-installer-cache && \
  #rm -rf \
