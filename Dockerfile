@@ -12,21 +12,20 @@ LABEL build_version="Thraxis' version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 #ENV CALIBRE_TEMP_DIR="/config/calibre/tmp/"
 #ENV CALIBRE_CACHE_DIRECTORY="/config/cache/calibre/"
 
-
-# install packages
+# install build packages
 RUN \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
 	make && \
 
+# install runtime packages
  apk add --no-cache \
- 	ghostscript \
- 	mesa-gl \
- 	qt5-qtbase-x11 \
- 	xdg-utils && \
-
- # build unrarlib
+	ghostscript && \
+# 	mesa-gl \
+# 	qt5-qtbase-x11 \
+# 	xdg-utils && \
+# build unrarlib
  rar_ver=$(apk info unrar | grep unrar- | cut -d "-" -f2 | head -1) && \
  mkdir -p \
 	/tmp/unrar && \
@@ -53,20 +52,20 @@ RUN \
 # install app
  git clone --depth 1 https://github.com/dobytang/lazylibrarian.git /app/lazylibrarian && \
 
- # cleanup
+# cleanup
  apk del --purge \
 	build-dependencies && \
  rm -rf \
-	/tmp/* 
+	/tmp/*
 #	&& \
- #rm -rf \
- #   /tmp/calibre-installer-cache && \
- #rm -rf \
- #   glibc.apk glibc-bin.apk /var/cache/apk/*
+# rm -rf \
+#    /tmp/calibre-installer-cache && \
+# rm -rf \
+#   glibc.apk glibc-bin.apk /var/cache/apk/*
 
- # add local files
- COPY root/ /
+# add local files
+COPY root/ /
 
- # ports and volumes
- EXPOSE 5299
- VOLUME /config /books /audiobooks /magazines /downloads
+# ports and volumes
+EXPOSE 5299
+VOLUME /config /books /audiobooks /magazines /downloads
