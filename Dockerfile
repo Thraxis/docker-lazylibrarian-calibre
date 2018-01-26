@@ -24,8 +24,9 @@ RUN \
 	ghostscript \
  	mesa-gl \
  	qt5-qtbase-x11 \
-	py-html5lib \
  	xdg-utils && \
+	
+apk add py-html5lib --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ && \
 
 # build unrarlib
  rar_ver=$(apk info unrar | grep unrar- | cut -d "-" -f2 | head -1) && \
