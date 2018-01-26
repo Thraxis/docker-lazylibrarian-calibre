@@ -24,6 +24,7 @@ RUN \
 	ghostscript \
  	mesa-gl \
  	qt5-qtbase-x11 \
+	py-html5lib \
  	xdg-utils && \
 
 # build unrarlib
