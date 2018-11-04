@@ -1,17 +1,13 @@
 [![Thraxis|Docker](https://raw.githubusercontent.com/thraxis/docker-templates/master/thraxis/img/thraxis-docker-medium.png)][templateurl]
-[templateurl]: https://github.com/Thraxis/docker-templates
 
 # thraxis/lazylibrarian-calibre
 [![](https://images.microbadger.com/badges/version/thraxis/lazylibrarian-calibre.svg)](https://microbadger.com/images/thraxis/lazylibrarian-calibre "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/thraxis/lazylibrarian-calibre.svg)](https://microbadger.com/images/thraxis/lazylibrarian-calibre "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/thraxis/lazylibrarian-calibre.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/thraxis/lazylibrarian-calibre.svg)][hub]
-[hub]: https://hub.docker.com/r/thraxis/lazylibrarian-calibre/
 
 [LazyLibrarian][lazyurl] is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info.  This container is based on the DobyTang fork.
 
 [Calibre][calibreurl] is a free and open source e-book library management application developed by users of e-books for users of e-books. This container uses the CLI program calibredb to import books to the library.
 
 [![lazylibrarian](https://raw.githubusercontent.com/thraxis/docker-templates/master/thraxis/img/lazylibrarian-calibre-icon.png)][lazyurl]
-[lazyurl]: https://github.com/DobyTang/LazyLibrarian
-[calibreurl]: http://calibre-ebook.com/
 
 ## Usage
 
@@ -81,3 +77,8 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 + **26-05-17:** Rebased Alpine 3.6
 + **10-02-17:** Rebased Alpine 3.5
 + **21.01.17:** Initial Release
+
+[templateurl]: https://github.com/Thraxis/docker-templates
+[hub]: https://hub.docker.com/r/thraxis/lazylibrarian-calibre/
+[lazyurl]: https://github.com/DobyTang/LazyLibrarian
+[calibreurl]: http://calibre-ebook.com/
