@@ -49,7 +49,7 @@ apk add py-html5lib --no-cache --repository http://dl-3.alpinelinux.org/alpine/e
  wget -O- ${CALIBRE_INSTALLER_SOURCE_CODE_URL} | python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(install_dir='/opt', isolated=True)" && \
 
 # install app
- git clone --depth 1 https://github.com/dobytang/lazylibrarian.git /app/lazylibrarian && \
+ git clone --depth 1 https://gitlab.com/LazyLibrarian/LazyLibrarian.git /app/lazylibrarian && \
 
 # cleanup
  apk del --purge \
