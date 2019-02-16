@@ -19,6 +19,7 @@ docker create \
   -v <path to data>:/books \
   -v <path to data>:/audiobooks \
   -v <path to data>:/magazines \
+  -v <path to data>:/comics \
   -e PGID=<gid> -e PUID=<uid>  \
   -e TZ=<timezone> \
   -p 5299:5299 \
@@ -39,6 +40,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-v /books` location of calibre ebook library
 * `-v /audiobooks` location of audiobook library
 * `-v /magazines` location of magazine library
+* `-v /comics` location of comic books library
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for setting timezone information, eg Europe/London
@@ -72,6 +74,7 @@ Access the webui at `<your-ip>:5299/home`, for more information check out [LazyL
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' thraxis/lazylibrarian-calibre`
 
 ## Versions
++ **16-02-19:** Add apprise and /comics directory mapping
 + **16-10-17:** Internal GIT Pull at Runtime
 + **22-07-17:** Added Audiobook mapping and calibredb environment variables
 + **26-05-17:** Rebased Alpine 3.6

@@ -61,9 +61,13 @@ apk add py-html5lib --no-cache --repository http://dl-3.alpinelinux.org/alpine/e
  rm -rf \
    glibc.apk glibc-bin.apk /var/cache/apk/*
 
+# add apprise
+RUN pip install --upgrade pip
+RUN pip install apprise
+   
 # add local files
 COPY root/ /
 
 # ports and volumes
 EXPOSE 5299
-VOLUME /config /books /audiobooks /magazines /downloads
+VOLUME /config /books /audiobooks /magazines /comics /downloads
