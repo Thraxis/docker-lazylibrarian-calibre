@@ -26,7 +26,7 @@ RUN \
  	qt5-qtbase-x11 \
  	xdg-utils && \
 	
-apk add py-html5lib py3-webencodings --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ && \
+apk add py-html5lib py-webencodings --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ && \
 
 # build unrarlib
  rar_ver=$(apk info unrar | grep unrar- | cut -d "-" -f2 | head -1) && \
